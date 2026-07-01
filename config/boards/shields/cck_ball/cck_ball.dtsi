@@ -52,7 +52,7 @@
             a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             steps = <24>;   /* 数一下转动一周有多少格 */
-            pulses-per-detent = <4>;  /* 每转动一格编码器发几个信号 - 这个就来源于qmk，原版zmk只能是1，现在用的编码器是2，有些编码器是4 */
+            pulses-per-detent = <2>;  /* 每转动一格编码器发几个信号 - 这个就来源于qmk，原版zmk只能是1，现在用的编码器是2，有些编码器是4 */
             /* filter-reverse-guard-us = <800>;  过滤转动过程中出现的反向信号毛刺时间窗口，默认值就是800，关闭需要显式设置为0 */
             /* filter-reverse-as-codir = <0>;  转动过程中出现的反向信号毛刺处理为正向信号，现在默认值是0 - 关闭 */
             /* filter-codir-guard-us = <3000>;  转动过程中抑制快速连续出现的正向信号的时间窗口，默认值是3000，关闭需要显式设置为0 */
@@ -66,7 +66,7 @@
             a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             steps = <24>;
-            pulses-per-detent = <4>;  /* 每转动一格编码器发几个信号 - 这个就来源于qmk，原版zmk只能是1，现在用的编码器是2，有些编码器是4 */
+            pulses-per-detent = <2>;  /* 每转动一格编码器发几个信号 - 这个就来源于qmk，原版zmk只能是1，现在用的编码器是2，有些编码器是4 */
             /* filter-reverse-guard-us = <800>;  过滤转动过程中出现的反向信号毛刺时间窗口，默认值就是800，关闭需要显式设置为0 */
             /* filter-reverse-as-codir = <0>;  转动过程中出现的反向信号毛刺处理为正向信号，现在默认值是0 - 关闭 */
             /* filter-codir-guard-us = <3000>;  转动过程中抑制快速连续出现的正向信号的时间窗口，默认值是3000，关闭需要显式设置为0 */
