@@ -34,8 +34,7 @@
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-        tap-ms = <10>;
-        label = "scroll_vertical_encoder";
+        tap-ms = <100>;
     };
 
     // 左右滚动编码器行为
@@ -69,10 +68,10 @@
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp N1    &kp N2    &kp N3           &kp N4  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &msc MOVE_Y(10)  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans           &trans  &trans  &trans
-&trans  &tog 4  &trans  &trans  &trans  &trans  &trans    &trans    &trans           &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp N1    &kp N2    &kp N3  &kp N4  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &mo 3   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &tog 4  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -82,10 +81,10 @@
 
         num_layers {
             bindings = <
-&kp GRAVE    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &kp N1     &kp N2    &kp N3           &kp N4     &kp N0  &kp DEL
-&kp CAPS     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &mkp MB1   &mkp MB2  &msc MOVE_X(10)  &kp RIGHT  &none   &kp F11
-&trans       &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp HOME   &kp END   &kp PG_UP        &kp PG_DN  &none   &kp F12
-&bootloader  &trans  &trans  &trans  &trans  &trans   &mkp LCLK  &mo 5     &trans           &trans     &trans  &bootloader
+&kp GRAVE    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &kp N1     &kp N2    &kp N3     &kp N4     &kp N0  &kp DEL
+&kp CAPS     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &mkp MB1   &mkp MB2  &mo 3      &kp RIGHT  &none   &kp F11
+&trans       &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp HOME   &kp END   &kp PG_UP  &kp PG_DN  &none   &kp F12
+&bootloader  &trans  &trans  &trans  &trans  &trans   &mkp LCLK  &mo 5     &trans     &trans     &trans  &bootloader
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -112,7 +111,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,，,,,,,,,
+                // 编码器1：上下滚动,，,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
