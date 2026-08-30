@@ -54,7 +54,7 @@
         compatible = "zmk,combos";
 
         mouse {
-            bindings = <&tog 3>;
+            bindings = <&tog 1>;
             key-positions = <6 7>;
         };
     };
@@ -120,7 +120,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,，,,,,,,,,,,,
+                // 编码器1：上下滚动,，,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
