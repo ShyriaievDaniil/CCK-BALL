@@ -6,6 +6,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -64,10 +65,10 @@
 
         QWERTY {
             bindings = <
-&kp ESCAPE        &kp Q   &kp W                &kp E      &kp R               &kp T  &kp Y  &kp U      &kp I          &kp O           &kp P           &kp LEFT_BRACE
-&kp TAB           &kp A   &kp S                &kp D      &kp F               &kp G  &kp H  &kp J      &kp K          &kp L           &kp SEMI        &kp SQT
-&kp LEFT_SHIFT    &kp Z   &kp X                &kp C      &kp V               &kp B  &kp N  &kp M      &kp COMMA      &kp DOT         &kp UP_ARROW    &kp DELETE
-&kp LEFT_CONTROL  &tog 2  &mt LEFT_GUI C_MUTE  &kp SPACE  &mt LEFT_ALT SLASH  &mo 2  &mo 1  &kp ENTER  &kp BACKSPACE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp ESCAPE        &kp Q   &kp W                &kp E      &kp R               &kp T  &kp Y       &kp U      &kp I          &kp O           &kp P           &kp LEFT_BRACE
+&kp TAB           &kp A   &kp S                &kp D      &kp F               &kp G  &kp H       &kp J      &kp K          &kp L           &kp SEMI        &kp SQT
+&kp LEFT_SHIFT    &kp Z   &kp X                &kp C      &kp V               &kp B  &kp N       &kp M      &kp COMMA      &kp DOT         &kp UP_ARROW    &kp DELETE
+&kp LEFT_CONTROL  &tog 2  &mt LEFT_GUI C_MUTE  &kp SPACE  &mt LEFT_ALT SLASH  &sl 2  &kp DELETE  &kp ENTER  &kp BACKSPACE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings =
@@ -77,10 +78,10 @@
 
         mouse-layers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &mo 3   &mo 4   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &tog 1    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mo 3   &mkp MB2  &mo 4   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -90,10 +91,10 @@
 
         num_layers {
             bindings = <
-&kp GRAVE    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &kp NUMBER_6    &kp N7          &kp N8        &kp N9     &kp N0  &kp DEL
-&kp CAPS     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &kp F11
-&trans       &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp HOME        &kp END         &kp PG_UP     &kp PG_DN  &trans  &kp F12
-&bootloader  &trans  &trans  &trans  &trans  &trans   &mo 5           &trans          &trans        &trans     &trans  &bootloader
+&kp GRAVE    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &kp NUMBER_6    &kp N7          &kp N8        &kp N9     &kp N0     &kp DEL
+&kp CAPS     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp EQUAL  &kp F11
+&trans       &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp HOME        &kp END         &kp PG_UP     &kp PG_DN  &kp MINUS  &kp F12
+&bootloader  &trans  &trans  &trans  &trans  &trans   &mo 5           &trans          &trans        &trans     &trans     &bootloader
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -120,7 +121,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,，,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,，,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
@@ -128,7 +129,7 @@
 
         settings-layers {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &out OUT_TOG    &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &bt BT_CLR    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
