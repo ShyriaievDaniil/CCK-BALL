@@ -65,10 +65,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
+                <&macro_tap>,
                 <&tog 1>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
+                <&macro_tap>,
                 <&tog 1>;
 
             label = "NEW_MACRO";
@@ -136,7 +136,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,，,,,,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,，,,,,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
